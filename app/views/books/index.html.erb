@@ -1,7 +1,9 @@
 <h1>Books</h1>
 <p>Available as of <%= formatted_time(@available_at) %></p>
-<ol>
+<%= page_entries_info @books %>
+<ul>
 <% @books.each do |book| %>
   <li><%= link_to(book.title, book) %> by <%= book.author %></li>
 <% end %>
-</ol>
+</ul>
+<%= paginate @books %>
