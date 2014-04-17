@@ -1,0 +1,10 @@
+<% books.each do |book| %>
+	<h3>
+		<%= link_to(book.title, book) %>
+		<small>by <% book.author %></small>
+	</h3>
+	<p>
+		<%= render partial: 'average_stars',
+		locals: {book: book} %>
+	</p>
+<% end %>

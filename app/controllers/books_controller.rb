@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   end    
   def index
  	@available_at = Time.now
-	@books = Book.order(:title).page(params[:page])
+	@books = Book.includes(:reviews).order(:title).page(params[:page])
   end
   def show
   end
